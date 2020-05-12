@@ -30,5 +30,5 @@ ab -n 5000 -c 500 http://localhost:3000/
 
 Test swoole server.
 ```bash
-ab -n 5000 -c 500 http://localhost:3000/
+ab -n 5000 -c 500 http://localhost:9501/
 ```
