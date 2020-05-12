@@ -1,0 +1,23 @@
+version: "3.4"
+
+services:
+  swoole:
+    image: phpswoole/swoole
+    working_dir: /app
+    container_name: swoole
+    volumes:
+      - ./server.php:/app/server.php
+    command: php server.php
+    ports:
+      - "9501:9501"
+
+  express:
+    image: node:12.14.1-alpine
+    working_dir: /app
+    container_name: node
+    volumes:
+      - ./server.js:/app/server.js
+      - ./node_modules:/app/node_modules
+    command: node server.js
+    ports:
+      - "3000:3000"
